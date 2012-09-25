@@ -55,7 +55,8 @@
             -webkit-box-align: center;
 
             overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
+            /*-webkit-overflow-scrolling: touch;*/
+
             -webkit-transform-style: preserve-3d;
         }
 
@@ -72,20 +73,25 @@
             font-size: 1.5em;
 
             -webkit-transform-style: preserve-3d;
-
-            /*margin-left: 25px;*/
-            /*margin-right: 15px;*/
-            /*padding-left: 20px;*/
-            /*padding-left: 20px;*/
-
-            /*margin: 10px;*/
-            /*padding: 15px;*/
         }
 
         p {
-            -webkit-transform-style:preserve-3d;
+            -webkit-transform-style: preserve-3d;
             padding-left: 10px;
             margin-right: 10px;
+        }
+
+        section img {
+            width: 300px;
+        }
+
+        .placeholder {
+            width: 315px;
+            height: 200px;
+            background: #fdf5e6;
+
+            /*overflow-y: auto;*/
+            /*-webkit-overflow-scrolling: touch;*/
         }
     </style>
 </head>
@@ -98,7 +104,13 @@
         <div id="innerContent">
             <section>
                 <p>明朝（1368年 1月23日－1644年
-                    4月25日[注2]）是中国历史上最后一个由汉族建立的中原王朝，历经十二世、十六位皇帝，共276年。明朝初期定都于应天府（今南京市），其辖区称为京师。1421年明成祖迁都至顺天府（今北京市），北平布政司升为京师，原京师改称南京[1]。</p>
+                    4月25日[注2]）是中国历史上最后一个由汉族建立的中原王朝，历经十二世、十六位皇帝，共276年。
+                    <img src="images/p1.png">
+                    明朝初期定都于应天府（今南京市），其辖区称为京师。1421年明成祖迁都至顺天府（今北京市），北平布政司升为京师，原京师改称南京[1]。</p>
+
+                <div id="p1" class="placeholder">
+                    <div style="width: 1000px;height: 100%;"></div>
+                </div>
 
                 <p>公元1368年，时为韩宋吴王的朱元璋，在统一陈友谅、张士诚、方国珍等群雄势力后。于当年农历正月初四日，在应天府登基，国号大明[2]。因明朝的皇帝姓朱，故又称朱明[1]。</p>
 
@@ -149,6 +161,7 @@
             </section>
         </div>
     </div>
+    <!--<div id="touchPad"></div>-->
 </div>
 <script>
     $(document).ready(function () {
@@ -156,7 +169,38 @@
             "-webkit-transform-style":"preserve-3d",
             width:'6134px'
         });
+
     });
+
+    $('#app').on('touchstart touchmove touchend',function(event){
+        event.preventDefault();
+    });
+
+    var _forward=true;
+
+    $('#content').on('touchend',function(event){
+        console.log('touch end');
+        if(_forward){
+            $('#innerContent').css({
+                "-webkit-transform-style":"preserve-3d",
+                "-webkit-transition":"all .5s",
+                "-webkit-transform":"translate(-1024px,0)"
+            });
+        }else{
+            $('#innerContent').css({
+                "-webkit-transform-style":"preserve-3d",
+                "-webkit-transition":"all .5s",
+                "-webkit-transform":"translate(0,0)"
+            });
+        }
+        _forward=!_forward;
+    });
+
+    $('#p1').on('touchend',function(event){
+        alert('touch end!');
+        return false;
+    });
+
 </script>
 </body>
 </html>
