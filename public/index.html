@@ -55,13 +55,23 @@
             -webkit-box-align: center;
 
             overflow-y: auto;
-            /*-webkit-overflow-scrolling: touch;*/
+            -webkit-overflow-scrolling: touch;
 
             -webkit-transform-style: preserve-3d;
         }
 
         #innerContent {
             /*width: 6134px;*/
+        }
+
+        #contentMask{
+            height:668px;
+            width: 1024px;
+            top: 80px;
+
+            background: #ff69b4;
+            opacity: 0.3;
+            position: absolute;
         }
 
         section {
@@ -86,9 +96,12 @@
         }
 
         .placeholder {
-            width: 315px;
-            height: 200px;
-            background: #fdf5e6;
+            width: 100%;
+            height: 300px;
+            /*background: #fdf5e6;*/
+
+            /*padding: 10px;*/
+            /*margin-right: 10px;*/
 
             /*overflow-y: auto;*/
             /*-webkit-overflow-scrolling: touch;*/
@@ -105,17 +118,26 @@
             <section>
                 <p>明朝（1368年 1月23日－1644年
                     4月25日[注2]）是中国历史上最后一个由汉族建立的中原王朝，历经十二世、十六位皇帝，共276年。
-                    <img src="images/p1.png">
+                    <!--<img src="images/p1.png">-->
+                    <canvas id="img1" height="260px"></canvas>
                     明朝初期定都于应天府（今南京市），其辖区称为京师。1421年明成祖迁都至顺天府（今北京市），北平布政司升为京师，原京师改称南京[1]。</p>
 
-                <div id="p1" class="placeholder">
-                    <div style="width: 1000px;height: 100%;"></div>
-                </div>
+                <!--<div  class="placeholder">-->
+                    <!--<div style="width: 1000px;height: 100%;"></div>-->
+                <!--</div>-->
+                <canvas  height="300px">
+                </canvas>
+
 
                 <p>公元1368年，时为韩宋吴王的朱元璋，在统一陈友谅、张士诚、方国珍等群雄势力后。于当年农历正月初四日，在应天府登基，国号大明[2]。因明朝的皇帝姓朱，故又称朱明[1]。</p>
 
                 <p>
-                    明前期，经过明太祖朱元璋的洪武之治，国力迅速成长，到明成祖时期，国势到达顶峰，皇帝极力扩张领土，是为永乐盛世。其后的明仁宗和明宣宗时期仍处于兴盛时期，史称仁宣之治。明英宗与明代宗时期，虽经土木堡之变，但经于谦等人抗敌，最终解除国家危机。明宪宗与明孝宗相继与民休息，政局尚可平稳。明武宗沉溺游乐，最终使明孝宗一脉绝嗣，引发大礼议之争。明世宗即位后，清除宦官和权臣势力，总揽朝纲。明世宗中后期，东南沿海任用胡宗宪、俞大猷等将领，平定倭患。明世宗驾崩后十数年，经历隆庆新政和万历中兴，国力得到恢复。明神宗中期，完成万历三大征，平定内乱，粉碎丰臣秀吉攻占朝鲜王朝的梦想。然而因国本之争，皇帝逐渐疏于朝政，同时东林党争也带来明朝末期政治的混乱，史称万历怠政。明熹宗时，魏忠贤阉党虽祸乱朝纲，到明思宗即位后才废除宦官专政。然而明思宗政策失误和天灾不断，明朝最终亡于农民军建立的大顺。1644年，明思宗自缢于北京煤山，至此明朝享国祚276年。随后，满清军队击败大顺军并入主中原。后继南明与明郑政权延续数十年，直到1683年清军占领台湾方止[1]。</p>
+                    明前期，经过明太祖朱元璋的洪武之治，国力迅速成长，到<br>
+
+                <canvas height="300px">
+                </canvas>
+
+                <p>明成祖时期，国势到达顶峰，皇帝极力扩张领土，是为永乐盛世。其后的明仁宗和明宣宗时期仍处于兴盛时期，史称仁宣之治。明英宗与明代宗时期，虽经土木堡之变，但经于谦等人抗敌，最终解除国家危机。明宪宗与明孝宗相继与民休息，政局尚可平稳。明武宗沉溺游乐，最终使明孝宗一脉绝嗣，引发大礼议之争。明世宗即位后，清除宦官和权臣势力，总揽朝纲。明世宗中后期，东南沿海任用胡宗宪、俞大猷等将领，平定倭患。明世宗驾崩后十数年，经历隆庆新政和万历中兴，国力得到恢复。明神宗中期，完成万历三大征，平定内乱，粉碎丰臣秀吉攻占朝鲜王朝的梦想。然而因国本之争，皇帝逐渐疏于朝政，同时东林党争也带来明朝末期政治的混乱，史称万历怠政。明熹宗时，魏忠贤阉党虽祸乱朝纲，到明思宗即位后才废除宦官专政。然而明思宗政策失误和天灾不断，明朝最终亡于农民军建立的大顺。1644年，明思宗自缢于北京煤山，至此明朝享国祚276年。随后，满清军队击败大顺军并入主中原。后继南明与明郑政权延续数十年，直到1683年清军占领台湾方止[1]。</p>
 
                 <p>
                     明朝的领土囊括今日内地十八省之范围，初年东北抵日本海、鄂霍次克海、乌地河流域，后改为辽河流域；初年北达戈壁沙漠一带，后改为今长城；西北至新疆哈密，后改为嘉峪关；并曾在今满洲、新疆东部、西藏等地设有羁縻机构。明成祖时期甚至短暂征服并统治安南（今越南北部）[1]，西元1415年，明朝领土面积达到约650万平方公里。
@@ -161,6 +183,8 @@
             </section>
         </div>
     </div>
+
+    <div id="contentMask"></div>
     <!--<div id="touchPad"></div>-->
 </div>
 <script>
@@ -170,36 +194,79 @@
             width:'6134px'
         });
 
+//        setTimeout(function(){
+//            alert($('#img1').offset().left);
+//        },100);
+        var img=new Image();
+        img.width=300;
+        img.src="images/p1.png";
+        $(img).css({
+            'position':'absolute',
+            'top':'188px', //288-188
+            'left':'15px'//10+5
+        });
+        $(img).appendTo('#innerContent');
+//        alert($('#img1').offset().left);
+
     });
 
-    $('#app').on('touchstart touchmove touchend',function(event){
-        event.preventDefault();
+//    $('#content').scrollLeft(1024);
+
+//    $('#innerContent').on('move', function (event) {
+//        return false;
+//    });
+
+    $('#innerContent').on('touchstart touchend', function (event) {
+       return false;
     });
 
-    var _forward=true;
+//    $('#contentMask').on(' touchstart', function (event) {
+////       alert('content touch end');
+//        return false;
+//    });
 
-    $('#content').on('touchend',function(event){
-        console.log('touch end');
-        if(_forward){
-            $('#innerContent').css({
-                "-webkit-transform-style":"preserve-3d",
-                "-webkit-transition":"all .5s",
-                "-webkit-transform":"translate(-1024px,0)"
-            });
-        }else{
-            $('#innerContent').css({
-                "-webkit-transform-style":"preserve-3d",
-                "-webkit-transition":"all .5s",
-                "-webkit-transform":"translate(0,0)"
-            });
-        }
-        _forward=!_forward;
-    });
 
-    $('#p1').on('touchend',function(event){
-        alert('touch end!');
-        return false;
-    });
+    //    $('#app').on('touchstart touchmove touchend',function(event){
+    //        event.preventDefault();
+    //    });
+
+    //    var _forward=true;
+    //
+    //    $('#content').on('touchend',function(event){
+    //        console.log('touch end');
+    //        if(_forward){
+    //            $('#innerContent').css({
+    //                "-webkit-transform-style":"preserve-3d",
+    //                "-webkit-transition":"all .5s",
+    //                "-webkit-transform":"translate(-1024px,0)"
+    //            });
+    //        }else{
+    //            $('#innerContent').css({
+    //                "-webkit-transform-style":"preserve-3d",
+    //                "-webkit-transition":"all .5s",
+    //                "-webkit-transform":"translate(0,0)"
+    //            });
+    //        }
+    //        _forward=!_forward;
+    //    });
+    //
+    //    var moved=false;
+    //
+    //    $('#p1').on('touchmove',function(event){
+    //        moved=true;
+    //    });
+    //
+    //
+    //    $('#p1').on('touchend',function(event){
+    //
+    //        if(!moved){
+    //            alert('touch end!');
+    //        }
+    //
+    //        moved=false;
+    //    });
+
+
 
 </script>
 </body>
